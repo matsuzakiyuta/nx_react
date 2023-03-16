@@ -1,16 +1,13 @@
-import styled from 'styled-components';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+import { Route, Routes } from 'react-router-dom';
 
-import NxWelcome from './nx-welcome';
-
-const StyledApp = styled.div`
-  // Your style here
-`;
+import Test from './test/test';
 
 export function App() {
   return (
-    <StyledApp>
-      <NxWelcome title="nx-react" />
-    </StyledApp>
+    <Routes>
+      <Route path="/" element={<Test />}></Route>
+    </Routes>
   );
 }
 
