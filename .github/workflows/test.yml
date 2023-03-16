@@ -22,7 +22,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: yarn install
-      - run: yarn  test
-      - run: yarn build
+          cache: 'yarn'
+      - name: node_modules install
+        run: yarn install
+      - name: lint check
+        run: |
+          yarn lint & yarn shared-lint
+      - name: test
+        run: |
+          yarn test & yarn student-test & yarn shared-test
+      - name: build check
+        run: yarn build

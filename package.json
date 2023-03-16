@@ -5,7 +5,11 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "student-test": "nx run student:test",
+    "shared-test": "nx run shared-ui:test",
+    "lint": "nx lint",
+    "shared-lint": "nx run shared-ui:lint"
   },
   "private": true,
   "dependencies": {
